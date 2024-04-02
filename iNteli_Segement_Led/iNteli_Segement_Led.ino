@@ -6,6 +6,7 @@
 
 // Data wire is plugged into port 2 on the Arduino
 #define ONE_WIRE_BUS D4
+#define BUZZER_PIN D3
 
 // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
 OneWire oneWire(ONE_WIRE_BUS);
@@ -103,6 +104,7 @@ void setup() {
   lc.setIntensity(0, 8);       // Set brightness level (0 is min, 15 is max)
   lc.clearDisplay(0);          // Clear the display
   Serial.println(sizeof(temp));
+  pinMode(BUZZER_PIN,OUTPUT);
 
   // Start up the library
   sensors.begin();
